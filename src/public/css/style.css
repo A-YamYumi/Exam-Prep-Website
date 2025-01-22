@@ -13,6 +13,10 @@
     padding: 15px;
 }
 
+#top-items{
+    display: none;
+}
+
 .top-bar a {
     color: white;
     padding: 15px;
