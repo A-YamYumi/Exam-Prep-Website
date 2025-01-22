@@ -15,6 +15,9 @@
 
 #top-items{
     display: none;
+    margin-left: 6rem;
+    position: relative;
+    background-color: red;
 }
 
 .top-bar a {
