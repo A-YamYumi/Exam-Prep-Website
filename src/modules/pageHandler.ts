@@ -1,8 +1,8 @@
-import express, { Request, Response } from "express";
+import { Router, Request, Response } from "express";
 import { resolveFilePath } from "./fileResolver";
+import path from "path";
 
-const router = express.Router();
-const pagesDir = '../public/pages'
+const router = Router();
 
 router.get('/', (req: Request, res: Response) => {
     res.redirect('/subject')
@@ -12,8 +12,10 @@ router.get('/', (req: Request, res: Response) => {
 router.get("/:category?/*", async (req: Request, res: Response) => {
     const { category, 0: page } = req.params;
 
+    const htmlPath = path.join((category) ? category : '', page)
+
     try {
-        const filePath = await resolveFilePath(category, page, pagesDir);
+        const filePath = await resolveFilePath({ baseDir: '../public/pages/', path: htmlPath });
 
         if (filePath) {
             res.sendFile(filePath);
