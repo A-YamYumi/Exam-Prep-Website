@@ -1,5 +1,5 @@
 # Exam preparation web application.
-This project is for educational purposes.
+This project is for educational purposes. <br/>
 The assignment from the professor.
 
 ## installation guide.
