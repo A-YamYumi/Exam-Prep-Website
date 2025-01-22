@@ -9,6 +9,10 @@
     margin: 0px;
 }
 
+#top-item {
+    padding: 15px;
+}
+
 .top-bar a {
     color: white;
     padding: 15px;
