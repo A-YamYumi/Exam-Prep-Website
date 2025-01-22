@@ -1,8 +1,7 @@
 {
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "tsc && npm run copy-assets",
-    "copy-assets": "node buildHelper.js",
+    "build": "tsc && node buildHelper.js",
     "start": "node dist/index.js"
   },
   "dependencies": {
