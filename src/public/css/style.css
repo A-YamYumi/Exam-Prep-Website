@@ -1,0 +1,24 @@
+.top-bar {
+    background-color: rgb(195, 195, 195);
+}
+
+.top-bar ul {
+    list-style-type: none;
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+}
+
+.top-bar a {
+    color: white;
+    padding: 15px;
+    display: block;
+}
+
+.top-bar li {
+    float: left;
+}
+
+.bottom-bar {
+    bottom: 0;
+}
