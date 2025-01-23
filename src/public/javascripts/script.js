@@ -1,8 +1,7 @@
 function more_items() {
-    var x = document.getElementById("top-items")
-    if (x.style.display === "none") {
-        x.style.display = "block"
-    } else {
-        x.style.display = "none"
-    }
+    var element = document.getElementById("dropdown-item")
+    if (element.className === "hidden")
+        element.classList.remove("hidden")
+    else
+        element.classList.add("hidden")
 }
