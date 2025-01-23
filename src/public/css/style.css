@@ -57,11 +57,10 @@
 
 .subjects {
     display: flex;
-    justify-content: space-between;
-    border-radius: 10px;
-}
-.subject img{
-    float: right;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
 }
 
 .subjects a {
