@@ -49,28 +49,52 @@
         -webkit-opacity: 0;
     }
 }
-.navbar{
-    margin-bottom: 30px;
-}
+
 .slideIn {
     -webkit-animation-name: slideIn;
     animation-name: slideIn;
 }
-.subject ul{
-    margin: 0 115px;
-}
-.subject li{
-    list-style-type: none;
-    border: 2px solid black;
-    margin-bottom: 10px;
-    padding: 15px;
+
+.subjects {
     display: flex;
-    justify-content: space-between;
-}
-.subject img{
-    float: right;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
 }
 
+.subjects a {
+    text-decoration: none;
+    color: black;
+}
+
+.subjects>.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    border-radius: 15px;
+    border: 3px solid black;
+    overflow: hidden;
+    align-items: stretch;
+}
+
+.subjects>.buttons>.info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}
+
+.subjects img {
+    height: auto;
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    max-height: 100%;
+}
+
+
 .bottom-bar {
-    bottom: 10;
+    bottom: 0;
 }
