@@ -49,12 +49,27 @@
         -webkit-opacity: 0;
     }
 }
-
+.navbar{
+    margin-bottom: 30px;
+}
 .slideIn {
     -webkit-animation-name: slideIn;
     animation-name: slideIn;
 }
-
+.subject ul{
+    margin: 0 115px;
+}
+.subject li{
+    list-style-type: none;
+    border: 2px solid black;
+    margin-bottom: 10px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.subject img{
+    float: right;
+}
 
 .bottom-bar {
     bottom: 10;
