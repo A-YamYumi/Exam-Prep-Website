@@ -98,3 +98,16 @@
 .bottom-bar {
     bottom: 0;
 }
+
+.contract{
+    margin: 20px;
+}
+
+.contract h1{
+    text-align: center;
+}
+.container{
+    background-color: #f2f2f2;
+    display: flex;
+    padding-top: 10px;
+}
