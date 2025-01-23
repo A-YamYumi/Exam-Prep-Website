@@ -1,5 +1,5 @@
 .top-bar {
-    background-color: rgb(195, 195, 195);
+    background-color: rgb(181, 181, 181);
 }
 
 .top-bar ul {
@@ -12,22 +12,11 @@
 .top-bar button {
     padding: 15px;
 }
-
-#top-items{
-    display: none;
-    margin-left: 5rem;
-    flex-wrap: wrap;
+.hidden{
+    height: 0;
 }
-#top-items li{
-    list-style-type: none;
-    align-content: center;
-    background-color: red;
-    width: 120px;
-}
-#top-items a{
-    color: black;
-    text-decoration: none;
-    padding-left: 5px;
+.dropdown-items li{
+    clear: both;
 }
 .top-bar a {
     color: white;
