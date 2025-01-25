@@ -99,15 +99,30 @@
     bottom: 0;
 }
 
-.contract{
-    margin: 20px;
+/* contact page */
+.contact{
+    margin: 0px 10%;
 }
 
-.contract h1{
+.contact div{
+    padding: 12px;
+}
+.contact h1{
     text-align: center;
+    margin-bottom: 5px;
+    margin: 12px 0px 12px;
 }
 .container{
     background-color: #f2f2f2;
     display: flex;
-    padding-top: 10px;
+    flex-direction: column;
+    border-radius: 10px;
+
+}
+
+
+
+/* booststrap edit */
+.form-select-lg{
+    font-size: 1.15rem;
 }
