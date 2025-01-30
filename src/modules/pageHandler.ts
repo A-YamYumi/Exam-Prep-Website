@@ -6,7 +6,7 @@ const router = Router();
 const pageDir = '../public/pages/';
 
 function errorResponse(res: Response) {
-    res.redirect('/');
+    res.status(404).send("Page not found!");
 }
 
 router.get("/", async (req: Request, res: Response) => {
