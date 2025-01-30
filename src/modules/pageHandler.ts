@@ -5,17 +5,21 @@ import path from "path";
 const router = Router();
 const pageDir = '../public/pages/';
 
+function errorResponse(res: Response) {
+    res.redirect('/');
+}
+
 router.get("/", async (req: Request, res: Response) => {
     try {
         const filePath = await resolveFilePath({ baseDir: pageDir, path: 'index' });
         if (filePath) {
             res.sendFile(filePath);
         } else {
-            res.status(404).send("Index page not found!");
+            errorResponse(res);
         }
     } catch (error) {
         console.error(error);
-        res.status(500).send("Server error!");
+        errorResponse(res);
     }
 });
 
@@ -31,11 +35,11 @@ router.get("/:category?/*", async (req: Request, res: Response) => {
         if (filePath) {
             res.sendFile(filePath);
         } else {
-            res.status(404).send("Page not found!");
+            errorResponse(res);
         }
     } catch (error) {
         console.error(error);
-        res.status(500).send("Server error!");
+        errorResponse(res);
     }
 });
 
