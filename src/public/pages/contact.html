@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contract</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../javascripts/load-components.js"></script>
+    
+    <script src="../javascripts/contact.js"></script>
+
+    <style>
+        .message textarea{
+            width: 100%;
+            height: 150px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border-radius: 4px;
+            font-size: 16px;
+            resize: none;
+        }
+
+        .container p {
+            font-size: 16px;
+            padding-left: 20px;
+        }
+
+        button{
+            display: inline-flex;
+            margin: 0px 20px;
+            font-size: 16px;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 7px;
+        }
+
+        button[type="submit"]{
+            background-color: rgb(72, 232, 64);
+        }
+        button[type="reset"]{
+            background-color: rgb(255, 48, 48);
+            float: right;
+        }
+        .smth{
+            background-color: rgb(205, 205, 205);
+            border-radius: 7px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <main class="contact">
+        <h1>ถามตอบอาจารย์</h1>
+        <div class="container">
+
+            <select class="form-select mb-3" aria-label=".form-select-lg example" onchange="change_n()">
+                <option selected>เลือกรายวิชา</option>
+                <option value="1">วิชา Subject 101</option>
+                <option value="2">วิชา Subject 102</option>
+                <option value="3">วิชา Subject 103</option>
+                <option value="4">วิชา Subject 104</option>
+            </select>
+
+            <p id = "prof_n">--เลือกรายวิชา--</p>
+
+            <div class="input-group">
+                <span class="input-group-text">First name</span>
+                <span class="input-group-text">{student_first_name}</span>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text">Last name</span>
+                <span class="input-group-text">{student_last_name}</span>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">UP-email</span>
+                <span class="input-group-text">{student_id@up.ac.th}</span>
+            </div>
+
+            <p>--ข้อความ--</p>
+            <div class="message">
+                <textarea type="text"></textarea>
+            </div>
+
+            <div class="c-button">
+                <button type="submit">ตกลง</button>
+                <button type="reset">ยกเลิก</button>
+            </div>
+
+            <div class="mx-4 smth">
+                <p>กฎการส่งคำถาม ถามตอบรายวิชา</p>
+                <p>1.คำถามจะต้องเกี่ยวกับรายวิชานั้น</p>
+                <p>2.ไม่มีคำถามเกี่ยวกับเรื่องส่วนตัว</p>
+                <p>3.ไม่ถามเกี่ยวกับเนื้อหาอนาจาร หรือรุนแรง</p>
+                <p>4.เคารพกฎหมายอิเล็กทรอนิกส์์</p>
+                <p>5.เคารพอาจารย์</p>
+            </div>
+
+        </div>
+    </main>
+</body>    
+</html>
