@@ -51,7 +51,7 @@
 }
 .main-bg img {
     width: 100%;
-    height: auto;
+    max-height: 200px;
 }
 .slideIn {
     -webkit-animation-name: slideIn;

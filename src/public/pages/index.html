@@ -22,18 +22,13 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
-        .marx{
-            margin-left: 6rem !important;
-            margin-right: 6rem !important;
+
+        .containders{
+            max-width: 960px;
         }
-        .box {
-        display: flex;
-        height: 200px;
-        }
-        .yellow {
-          width: 280px;
-          height: 300px;
-          background-color: yellow;
+
+        .b-rad{
+            border-radius: 5px;
         }
 
     </style>
@@ -41,22 +36,71 @@
 
 <body>
     <div id="nav-placeholder"></div>
-    <!-- didnt log in yet -->
-    <main>
-        <section class="main-bg mt-4 position-relative">
-            <img src="../images/mainpage-bg.png" alt="" class="img-fluid">
-            <div class="centered">
-                <h2>Place_holder</h2>
-            </div>
-        </section>
+        <!-- didnt log in yet -->
+    <section class="main-bg mt-4 position-relative">
+        <img src="../images/mainpage-bg.png" alt="" class="img-fluid">
+        <div class="centered">
+            <h2>Place_holder</h2>
+        </div>
+    </section>
 
-        <section class="box mt-5 ">
-            <div class="position-relative yellow mx-5">
+    <main class="mt-4 mx-auto containers">
+        <div class="row mt-3 mb-3 ">
 
+            <div class="col-md-4 order-md-2  border border-dark">
+                <div class="d-flex justify-content-between mb-3"></div>
+                <h4 class="d-flex justify-content-between align-items-center mb-3">asd</h4>
+                asd
             </div>
-            <div class="position-relative yellow mx-5">
+
+            
+            <div class="col-md-8 order-md-1 p-5">
+                <div class="row ">
+                    <!-- first -->
+
+                    <div class="col-md-5 mx-auto my-3 ">
+                        <a href="#" class="card md-3">
+                            <div class="card ">
+                                <img src="../images/sign-subject.png" alt="" class="position-relative rounded">
+                                <div class="position-absolute fixed-bottom bg-white px-auto rounded ">
+                                    <h4 class="card_title p-2 ">title</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-5 mx-auto my-3">
+                        <a href="#" class="card">
+                            <div>
+                                <p class="card_title">title</p>
+                                <p class="card_description">Smth</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5 mx-auto my-3">
+                        <a href="#" class="card ">
+                            <div>
+                                <p class="card_title">title</p>
+                                <p class="card_description">Smth</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-5 mx-auto my-3">
+                        <a href="#" class="card ">
+                            <div>
+                                <p class="card_title">title</p>
+                                <p class="card_description">Smth</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
-        </section>
+            
+        </div>
     </main>
 </body>
 
