@@ -8,10 +8,16 @@ $(function () {
 });
 
 $(function () {
-    let path = "/components/subj_card"; // Force root path first
+    let path = "/components/subj_card";
+    let placeholders = [
+        "#subject-placeholder-1",
+        "#subject-placeholder-2",
+        "#subject-placeholder-3"
+    ]
 
-    // Load navbar
-    $.get(path, function (data) {
-        $("#subject-placeholder").html(data);
+    placeholders.forEach(function (placeholder) {
+        $.get(path, function (data) {
+            $(placeholder).html(data);
+        });
     });
 });
