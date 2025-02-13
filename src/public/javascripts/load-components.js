@@ -8,7 +8,7 @@ $(function () {
 });
 
 $(function () {
-    let path = "/components/subj_card"; // Force root path first
+    let path = "/components/subj-card"; // Force root path first
 
     // Load navbar
     $.get(path, function (data) {
