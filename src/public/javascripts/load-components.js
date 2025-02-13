@@ -6,3 +6,12 @@ $(function () {
         $("#nav-placeholder").html(data);
     });
 });
+
+$(function () {
+    let path = "/components/subj_card"; // Force root path first
+
+    // Load navbar
+    $.get(path, function (data) {
+        $("#subject-placeholder").html(data);
+    });
+});
