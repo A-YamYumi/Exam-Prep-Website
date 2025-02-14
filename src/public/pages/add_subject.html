@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Subject</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../javascripts/load-components.js"></script>
+
+    <style>
+
+
+        .scroll { 
+            height: 50%; 
+            font-size: large;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav-placeholder"></div>
+
+    <main class="mt-4 mx-auto">
+        <section class="search-bar mx-5 my-2 d-flex justify-content-center">
+            <input class="form-control  w-50" type="text" placeholder="Search">
+            <button type="submit"><i class="bi bi-search"></i></button>
+        </section>
+
+        <section class="search-bar mx-5 p-1 my-2 d-flex justify-content-center">
+            <div class="px-auto w-lg-50 flex-row">
+                <div class="dropdown mx-auto ">
+                    <label for="list_majors">Choose a tags:</label>
+                    <select type="checkbox" id="list_majors" onchange="filter_majors()">
+                        <option value="">Faculty</option>
+                        <option value="ICT">ICT</option>
+                        <option value="OTHER">OTHER</option>
+                    </select>
+                    <select type="checkbox" id="list_majors" onchange="filter_majors()">
+                        <option value="">Majors</option>
+                        <option value="SE">SE</option>
+                        <option value="CS">CS</option>
+                    </select>
+                </div>
+
+        </section>
+
+        <section class="m-3 d-flex justify-content-center scroll">
+            <div class="row bg-primary p-3">
+                <div>
+                    <div class="p-2 mb-1 bg-white">
+                        <input type="checkbox" id="subject-1"></button>
+                        <label for="subject-1">รายวิชา ##### 000000</label>
+                    </div>
+                </div>
+                <div >
+                    <div class="p-2 mb-1 bg-white">Custom column padding asd</div>
+                </div>
+                <div >
+                    <div class="p-2 mb-1 bg-white">Custom column padding asd</div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

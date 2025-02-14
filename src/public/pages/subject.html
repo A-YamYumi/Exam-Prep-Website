@@ -14,18 +14,34 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../javascripts/load-components.js"></script>
     <script>
-        const majors = ["SE","CS","GE"]
+        // const majors = ["SE","CS","AB","CD","EF"]
 
+        // function filter_majors(){
+        //     const selected_tag = document.getElementById('tags').value;
+        //     const show_checkbox = document.getElementById('show').checked;
+        //     const elements = document.querySelectorAll('.list_majors');
 
+        //     elements.forEach(function(element) {
+        //         if (show_checkbox === "") {
+        //             element.style.display = "block"
+
+        //         } else if (show_checkbox) {
+        //             element.style.display = element.id === selectedTag ? 'block' : 'none';
+                
+        //         } else {
+        //             element.style.display = 'none';
+        //         }
+        //     });
+        // }
     </script>
 </head>
 
 <style>
-    .search-bar button{
-        float: right;
-        padding: 6px 10px;
-    }
 
+
+    .list_majors {
+            display: none;
+        }
 
 </style>
 
@@ -36,36 +52,53 @@
     <main class="mt-4 mx-auto">
         <!-- just a button -->
         <section class="search-bar mx-5 my-2 d-flex justify-content-center">
-            <input class="form-control  w-50" type="text" placeholder="Search">
+            <input class="form-control  w-lg-50" type="text" placeholder="Search">
             <button type="submit"><i class="bi bi-search"></i></button>
         </section>
 
         <!-- tags -->
-        <section class="search-bar mx-5 p-1 my-2 d-flex justify-content-center">
-            <div class="px-auto w-50  container flex-row">
-                <button onclick="" class=" btn btn-outline-none">tags</button>
-                <!-- <div id="" class="z-index-2"></div> -->
+        <!-- <section class="search-bar mx-5 p-1 my-2 d-flex justify-content-center">
+            <div class="px-auto w-50  container flex-row ">
+                <div class="dropdown">
+                    <label for="list_majors">Choose a tag:</label>
+                    <select type="checkbox" id="list_majors" onchange="filter_majors()">
+                        <option value="">Tags</option>
+                        <option value="SE">SE</option>
+                        <option value="CS">CS</option>
+                    </select>
+                </div>
             </div>
-        </section>
+        </section> -->
 
         <div class="col-md-8 mx-auto mt-3">
             <div class="row mx-auto ">
                 <!-- การด์วิชา -->
-                <div class="col-md-3 col-6 d-flex justify-content-center mb-3">
+                <div class="col-md-3 col-6 d-flex justify-content-center mb-3 list_majors" id="SE">
                     <a href="#" class="card md-5 rounded sign-register" style="max-width: 250px;">
                         <div class="card ">
                             <img src="../images/placeholder.png" alt="" class="position-relative rounded">
                             <div class=" position-absolute fixed-bottom bg-white px-auto rounded ">
-                                <h6 class="z-index-1 card_title p-1 p-lg-3 text-center">วิชา #####1 SE</h6>
+                                <h6 class=" card_title p-1 p-lg-3 text-center">วิชา #####1 SE</h6>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-3 col-6 d-flex justify-content-center mb-3 list_majors" id="CS">
+                    <a href="#" class="card md-5 rounded sign-register" style="max-width: 250px;">
+                        <div class="card ">
+                            <img src="../images/placeholder.png" alt="" class="position-relative rounded">
+                            <div class=" position-absolute fixed-bottom bg-white px-auto rounded ">
+                                <h6 class=" card_title p-1 p-lg-3 text-center">วิชา #####1 CS</h6>
                             </div>
                         </div>
                     </a>
                 </div>
 
                 <!-- prop -->
-                <div class="col-md-3 col-6 d-flex justify-content-center mb-3" id="subject-placeholder-2"></div>
-                <div class="col-md-3 col-6 d-flex justify-content-center mb-3" id="subject-placeholder-3"></div>
-                <div class="col-md-3 col-6 d-flex justify-content-center mb-3" id="subject-placeholder-4"></div>
+                <div class="col-md-3 col-6 d-flex justify-content-center mb-3 list_majors" id="subject-placeholder-2"></div>
+                <div class="col-md-3 col-6 d-flex justify-content-center mb-3 list_majors" id="subject-placeholder-3"></div>
+                <div class="col-md-3 col-6 d-flex justify-content-center mb-3 list_majors" id="subject-placeholder-4"></div>
 
             </div>
         </div>

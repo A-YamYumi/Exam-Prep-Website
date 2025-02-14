@@ -97,6 +97,10 @@
     max-height: 100%;
 } */
 
+.search-bar button{
+    float: right;
+    padding: 6px 10px;
+}
 
 .bottom-bar {
     bottom: 0;
