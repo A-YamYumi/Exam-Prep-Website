@@ -9,7 +9,7 @@ $(function () {
 
 $(function () {
 
-    let path = "/components/subj-card"; // Force root path first
+    let path = "/components/subj-card"; 
     let placeholders = [
         "#subject-placeholder-1",
         "#subject-placeholder-2",
@@ -21,5 +21,14 @@ $(function () {
         $.get(path, function (data) {
             $(placeholder).html(data);
         });
+    });
+});
+
+$(function () {
+    let path = "/components/scroll_item"; 
+
+    // Load navbar
+    $.get(path, function (data) {
+        $("#scroll_item").html(data);
     });
 });
