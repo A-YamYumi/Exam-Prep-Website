@@ -12,11 +12,17 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../javascripts/load-components.js"></script>
+    <script src="../javascripts/search_func.js"></script>
 
     <style>
+        
+
         @media (min-width: 768px) {
             .media_respond{
                 max-width: 50%;
+            }
+            .search_width{
+                width: 50%;
             }
         }
         
@@ -35,6 +41,31 @@
             overflow-y: auto;
             width: 100%;
         }
+
+        #overlay_popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .popup {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 90%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn{
+            margin: 5px;
+        }
     </style>
 
     <script>
@@ -42,31 +73,67 @@
             document.querySelectorAll('.clickable-div').forEach(function(div) {
                 div.addEventListener('click', function() {
                     var checkbox = div.querySelector('input[type="checkbox"]');
-                    checkbox.checked = !checkbox.checked;  // Toggle the checkbox
+                    checkbox.checked = !checkbox.checked;  
                 });
             });
         });
 
-        document.addEventListener("DOMContentLoaded", function () {
-            var overlay = document.getElementById('overlay_popup');
-            var popup = document.querySelector('.popup');
-            var confirm = document.getElementById('popup_confirm');
-            var cancel = document.getElementById('popup_cancel');
-
-            confirm.addEventListener('click', function() {
-                overlay.style.display = 'none';
-            });
-
-            cancel.addEventListener('click', function() {
-                overlay.style.display = 'none';
-            });
-
-            window.addEventListener('click', function(event) {
-                if (event.target === overlay) {
-                    overlay.style.display = 'none';
+        document.addEventListener('DOMContentLoaded', function(){
+            document.getElementById('cancel_btn_overlay').addEventListener('click', function(event) {
+                var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                var isChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+                
+                if (isChecked) {
+                    event.preventDefault();
+                    document.getElementById('overlay_popup').style.display = 'flex';
                 }
             });
-        });
+
+            document.getElementById('popup_confirm').addEventListener('click', function() {
+                document.getElementById('overlay_popup').style.display = 'none';
+                location.reload();
+            });
+
+            document.getElementById('popup_cancel').addEventListener('click', function() {
+                document.getElementById('overlay_popup').style.display = 'none';
+            });
+        })
+
+        function searching_func() {
+            var input, filter, labels, txt_value;
+            input = document.getElementById('usr_input');
+            filter = input.value.toUpperCase();
+            labels = document.querySelectorAll('.clickable-div label');
+                
+            labels.forEach(function(label) {
+                txt_value = label.textContent || label.innerText;
+                if (txt_value.toUpperCase().indexOf(filter) > -1) {
+                    label.parentElement.style.display = "";
+                } else {
+                    label.parentElement.style.display = "none";
+                }
+            });
+        }
+
+        function filter_majors() {
+            var faculty_select, major_select, faculty, major, labels, txt_value;
+            faculty_select = document.getElementById('list_fauctly');
+            major_select = document.getElementById('list_majors');
+            faculty = faculty_select.value.toUpperCase();
+            major = major_select.value.toUpperCase();
+            labels = document.querySelectorAll('.clickable-div label');
+            
+            labels.forEach(function(label) {
+                txt_value = label.textContent || label.innerText;
+                if ((faculty === "" || txt_value.toUpperCase().indexOf(faculty) > -1) &&
+                    (major === "" || txt_value.toUpperCase().indexOf(major) > -1)) {
+                    label.parentElement.style.display = "";
+                } else {
+                    label.parentElement.style.display = "none";
+                }
+            });
+        }
+
     </script>
 </head>
 
@@ -75,15 +142,14 @@
 
     <main class="mt-4 mx-auto">
         <section class="search-bar mx-5 my-2 d-flex justify-content-center">
-            <input class="form-control  w-50" type="text" placeholder="Search">
-            <button type="submit"><i class="bi bi-search"></i></button>
+            <input class="form-control search_width" id="usr_input" onkeyup="searching_func()" type="text" placeholder="Search for subject">
         </section>
 
         <section class="search-bar mx-5 p-1 my-2 d-flex justify-content-center">
             <div class="px-auto w-lg-50 flex-row">
                 <div class="dropdown mx-auto ">
                     <label for="list_majors">Choose a tags:</label>
-                    <select type="checkbox" id="list_majors" onchange="filter_majors()">
+                    <select type="checkbox" id="list_fauctly" onchange="filter_majors()">
                         <option value="">Faculty</option>
                         <option value="ICT">ICT</option>
                         <option value="OTHER">OTHER</option>
@@ -102,17 +168,22 @@
                 <div class="col-12">
                     <div class="p-2 mb-2 bg-white rounded clickable-div">
                         <input type="checkbox" id="subject-1">
-                        <label for="subject-1">รายวิชา ##### 000000</label>
+                        <label for="subject-1">รายวิชา a#### 000000 ICT SE</label>
+                    </div>
+
+                    <div class="p-2 mb-2 bg-white rounded clickable-div">
+                        <input type="checkbox" id="subject-1">
+                        <label for="subject-1">รายวิชา b#### 000001 ICT SE</label>
                     </div>
 
                     <div class="p-2 mb-2 bg-white rounded clickable-div">
                         <input type="checkbox" id="subject-2">
-                        <label for="subject-2">รายวิชา ##### 000002</label>
+                        <label for="subject-2">รายวิชา b#### 000002 OTHER</label>
                     </div>
 
                     <div class="p-2 mb-2 bg-white rounded clickable-div">
                         <input type="checkbox" id="subject-3">
-                        <label for="subject-3">รายวิชา ##### 000003</label>
+                        <label for="subject-3">รายวิชา c#### 000003 ICT CS</label>
                     </div>
 
                     <section id="scroll_item" class="clickable-div"></section>
@@ -121,20 +192,22 @@
         </section>
         
         <section class="mt-3 d-flex justify-content-center">
+            <a href="/subject">
+                <div class="p-2">
+                    <button type="submit" value="Submit" class="btn btn-success">ยืนยัน</button>
+                </div>
+            </a>
             <div class="p-2">
-                <button type="submit" value="Submit" class="btn btn-success" onclick="location.reload(); return false;">ยืนยัน</button>
-            </div>
-            <div class="p-2">
-                <button type="reset" value="Reset" class="btn btn-danger " onclick="location.reload(); return false;">ยกเลิก</button>
+                <button type="reset" value="Reset" class="btn btn-danger " id="cancel_btn_overlay">ยกเลิก</button>
             </div>
         </section>
 
         <div id="overlay_popup">
             <div class="popup">
                 <h5>คุณต้องการยกเลิกหรือไม่?</h5>
-                <p>*กดตกลงเพื่อยออก</p>
+                <p style="color: red;">*กดตกลงเพื่อยกเลิกทั้งหมด</p>
                 <button id="popup_confirm" class="btn btn-primary">ตกลง</button>
-                <button id="popup_cancel" class="btn btn-secondary">ยกเลิก</button>
+                <button id="popup_cancel" class="btn btn-secondary" id="cancel_btn_overlay">ยกเลิก</button>
             </div>
         </div>
         

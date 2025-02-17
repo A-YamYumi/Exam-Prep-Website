@@ -45,6 +45,11 @@
             background-color: rgb(205, 205, 205);
             border-radius: 7px;
         }
+        @media (min-width: 768px) {
+            .main_content{
+                width: 75%;
+            }
+        }
 
     </style>
 </head>
@@ -54,7 +59,7 @@
 
     <main class="contact">
         <h1>ถามตอบอาจารย์</h1>
-        <div class="container">
+        <div class="container main_content">
 
             <select class="form-select mb-3" aria-label=".form-select-lg example" onchange="change_n()">
                 <option selected>เลือกรายวิชา</option>
@@ -87,8 +92,8 @@
             </div>
 
             <div class="c-button">
-                <button type="submit">ตกลง</button>
-                <button type="reset">ยกเลิก</button>
+                <button type="submit" onclick="location.reload()">ตกลง</button>
+                <button type="reset" onclick="location.reload()">ยกเลิก</button>
             </div>
 
             <div class="mx-4 smth">
