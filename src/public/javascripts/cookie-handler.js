@@ -8,16 +8,18 @@ if (getCookie("isProfessor") == "" || getCookie("isProfessor") == undefined) {
     setCookie("isProfessor", 0)
 }
 
-profile = document.getElementById("user-login")
-if (profile != null) {
-    if (user == '1') {
-        profile.innerHTML = `<a href="#" class="d-inline bi bi-bell text-white"></a>
-        <a href="/user/setting" class="d-inline text-white mx-2 text-decoration-none">User_name</a>
-                    <a href="#" class="d-inline bi bi-person text-white"></a>`
-    } else {
-        profile.innerHTML = `
-        <a href="/login" class="d-inline text-white mx-2 text-decoration-none">Login</a>
-                    <a href="#" class="d-inline bi bi-person text-white"></a>`
+function setupNavbar() {
+    profile = document.getElementById("user-login")
+    if (profile != null) {
+        if (user == '1') {
+            profile.innerHTML = `<a href="#" class="d-inline bi bi-bell text-white"></a>
+            <a href="/user/setting" class="d-inline text-white mx-2 text-decoration-none">User_name</a>
+                        <a href="#" class="d-inline bi bi-person text-white"></a>`
+        } else {
+            profile.innerHTML = `
+            <a href="/login" class="d-inline text-white mx-2 text-decoration-none">Login</a>
+                        <a href="#" class="d-inline bi bi-person text-white"></a>`
+        }
     }
 }
 
@@ -35,6 +37,14 @@ function setLogin() {
 function setLogout() {
     setCookie("isLogin", 0)
     location.reload()
+}
+
+function toggleProfessor() {
+    if (getCookie("isProfessor") == 0) {
+        setCookie("isProfessor", 1)
+    } else {
+        setCookie("isProfessor", 0)
+    }
 }
 
 function setCookie(cname, cvalue) {
