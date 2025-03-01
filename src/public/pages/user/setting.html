@@ -43,6 +43,15 @@
             width: 1000px;
             border-radius: 10px;
         }
+
+        .select-choice {
+            padding: 20px;
+            background: rgb(238, 238, 238);
+        }
+
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 
@@ -55,14 +64,15 @@
 
     <main class="setting">
 
-        <section class="d-flex profile-info" style="background-color: rgb(223, 223, 223);">
+        <section class="d-flex profile-info" style="background-color: rgb(238, 238, 238);">
             <div class="col-3 p-3">
-                <div>Profile</div>
-                <div>Notification</div>
-                <div>Log out</div>
+                <div class="select-choice">Profile</div>
+                <div class="select-choice">Notification</div>
+                <div class="select-choice">Log out</div>
             </div>
+
             <div class="col-7 p-3 ">
-                <div class=" p-4">
+                <section class=" p-4 hidden">
                     <h3>Profile</h3>
                     <div class="profile-img my-3">
                         <img src="/images/placeholder.png" alt="">
@@ -89,11 +99,24 @@
                             <input type="password" class="form-control" placeholder="**********" disabled>
                         </div>
 
-                        <div class="mt-3">
-                            <button>Edit</button>
+                        <div class="mt-3 ">
+                            <button class="px-3 py-2" style="border-radius: 10px;">Edit</button>
                         </div>
+
                     </div>
-                </div>
+                </section>
+
+                <section class="p-4">
+                    <h3>Notification</h3>
+                    <div class="form-check form-switch my-3">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox
+                            input</label>
+                    </div>
+
+                </section>
+            </div>
+
         </section>
     </main>
 </body>
