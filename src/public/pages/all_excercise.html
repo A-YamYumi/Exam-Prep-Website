@@ -13,7 +13,6 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/javascripts/load-components.js"></script>
-    <script src="/javascripts/search_func.js"></script>
 
     <style>
         .excercise-holder {
@@ -43,23 +42,6 @@
             padding: 10px;
         }
     </style>
-    <script>
-        function searching_func() {
-            var input, filter, labels, txt_value;
-            input = document.getElementById('usr_input');
-            filter = input.value.toUpperCase();
-            labels = document.querySelectorAll('.card');
-
-            labels.forEach(function (label) {
-                txt_value = label.textContent || label.innerText;
-                if (txt_value.toUpperCase().indexOf(filter) > -1) {
-                    label.parentElement.style.display = "";
-                } else {
-                    label.parentElement.style.display = "none";
-                }
-            });
-        }
-    </script>
 </head>
 
 <body>
@@ -68,13 +50,12 @@
     <main>
         <main class="mt-4 ex">
             <section class="search-bar mx-5 my-2 d-flex justify-content-center">
-                <input class="form-control search_width" id="usr_input" onkeyup="searching_func()" type="text"
-                    placeholder="Search for subject">
+                <input class="form-control search_width" id="usr_input" type="text" placeholder="Search for subject">
             </section>
 
             <section class="d-flex excercise-holder">
                 <div class="card items">
-                    <h5>รายวิชา xxxxx</h5>
+                    <h5>รายวิชา คณิตศาสตร์</h5>
                     <h6>บทที่ 1</h6>
                     <ul>
                         <li>เรื่อง</li>
@@ -91,7 +72,7 @@
                 </div>
 
                 <div class="card items">
-                    <h5>รายวิชา xxxxx</h5>
+                    <h5>รายวิชา วิทยาศาสตร์</h5>
                     <h6>บทที่ x</h6>
                     <ul>
                         <li>เรื่อง</li>
@@ -108,7 +89,7 @@
                 </div>
 
                 <div class="card items">
-                    <h5>รายวิชา xxxxx</h5>
+                    <h5>รายวิชา คอมพิวเตอร์</h5>
                     <h6>บทที่ x</h6>
                     <ul>
                         <li>เรื่อง</li>
@@ -125,7 +106,7 @@
                 </div>
 
                 <div class="card items">
-                    <h5>รายวิชา xxxxx</h5>
+                    <h5>รายวิชา AI</h5>
                     <h6>บทที่ x</h6>
                     <ul>
                         <li>เรื่อง</li>
@@ -143,6 +124,24 @@
 
             </section>
         </main>
+
+        <script>
+
+            var usr_input = document.getElementById('usr_input');
+
+            usr_input.addEventListener('keyup', (e) => {
+                const search = e.target.value.toLowerCase();
+                const items = document.querySelectorAll('.items');
+
+                items.forEach((item) => {
+                    if (item.textContent.toLowerCase().includes(search)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        </script>
 </body>
 
 </html>
