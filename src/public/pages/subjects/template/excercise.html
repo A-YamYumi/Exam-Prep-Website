@@ -42,16 +42,16 @@
         <div class="container my-5 px-3 pb-3">
             <h2 class="mt-3 mb-5">ทำข้อสอบจำลอง</h2>
 
-            <form id="exam-form">
+            <form id="exam-form" onsubmit="return location.href = '/subjects/template?showContent=solution';">
                 <!-- Question 1 -->
                 <div class="question">
                     1. ในภาษาไพทอน ฟังก์ชันใดใช้ในการแสดงข้อความออกทางจอภาพ:
                 </div>
                 <div class="answer">
-                    <label><input type="radio" name="q1" value="1"> 1. echo</label><br>
-                    <label><input type="radio" name="q1" value="2"> 2. Output</label><br>
-                    <label><input type="radio" name="q1" value="3"> 3. print</label><br>
-                    <label><input type="radio" name="q1" value="4"> 4. display</label>
+                    <label><input type="radio" name="q1" value="1" required> 1. echo</label><br>
+                    <label><input type="radio" name="q1" value="2" required> 2. Output</label><br>
+                    <label><input type="radio" name="q1" value="3" required> 3. print</label><br>
+                    <label><input type="radio" name="q1" value="4" required> 4. display</label>
                 </div>
 
                 <!-- Question 2 -->
@@ -59,13 +59,13 @@
                     2. ข้อใดต่อไปนี้ไม่เป็นความจริง:
                 </div>
                 <div class="answer">
-                    <label><input type="radio" name="q2" value="1"> 1. ไวยากรณ์ของ Python มีลักษณะคล้ายกับ
+                    <label><input type="radio" name="q2" value="1" required> 1. ไวยากรณ์ของ Python มีลักษณะคล้ายกับ
                         PHP</label><br>
-                    <label><input type="radio" name="q2" value="2"> 2. Python
+                    <label><input type="radio" name="q2" value="2" required> 2. Python
                         สามารถใช้สำหรับการพัฒนาเว็บ</label><br>
-                    <label><input type="radio" name="q2" value="3"> 3. Python
+                    <label><input type="radio" name="q2" value="3" required> 3. Python
                         สามารถทำงานได้หลายแพลตฟอร์ม</label><br>
-                    <label><input type="radio" name="q2" value="4"> 4. Python
+                    <label><input type="radio" name="q2" value="4" required> 4. Python
                         สามารถใช้เพื่อสร้างหน้าเว็บแบบไดนามิก</label>
                 </div>
 
@@ -74,10 +74,10 @@
                     3. คำสั่งใดใช้ในการวนลูปใน Python:
                 </div>
                 <div class="answer">
-                    <label><input type="radio" name="q3" value="1"> 1. for</label><br>
-                    <label><input type="radio" name="q3" value="2"> 2. while</label><br>
-                    <label><input type="radio" name="q3" value="3"> 3. foreach</label><br>
-                    <label><input type="radio" name="q3" value="4"> 4. repeat</label>
+                    <label><input type="radio" name="q3" value="1" required> 1. for</label><br>
+                    <label><input type="radio" name="q3" value="2" required> 2. while</label><br>
+                    <label><input type="radio" name="q3" value="3" required> 3. foreach</label><br>
+                    <label><input type="radio" name="q3" value="4" required> 4. repeat</label>
                 </div>
 
                 <!-- Question 4 -->
@@ -85,10 +85,10 @@
                     4. ข้อใดไม่ใช่ตัวแปรใน Python:
                 </div>
                 <div class="answer">
-                    <label><input type="radio" name="q4" value="1"> 1. int</label><br>
-                    <label><input type="radio" name="q4" value="2"> 2. float</label><br>
-                    <label><input type="radio" name="q4" value="3"> 3. str</label><br>
-                    <label><input type="radio" name="q4" value="4"> 4. def</label>
+                    <label><input type="radio" name="q4" value="1" required> 1. int</label><br>
+                    <label><input type="radio" name="q4" value="2" required> 2. float</label><br>
+                    <label><input type="radio" name="q4" value="3" required> 3. str</label><br>
+                    <label><input type="radio" name="q4" value="4" required> 4. def</label>
                 </div>
 
                 <!-- Question 5 -->
@@ -96,10 +96,10 @@
                     5. ข้อใดคือการแปลงค่าตัวแปรใน Python:
                 </div>
                 <div class="answer">
-                    <label><input type="radio" name="q5" value="1"> 1. parse()</label><br>
-                    <label><input type="radio" name="q5" value="2"> 2. toString()</label><br>
-                    <label><input type="radio" name="q5" value="3"> 3. int()</label><br>
-                    <label><input type="radio" name="q5" value="4"> 4. convert()</label>
+                    <label><input type="radio" name="q5" value="1" required> 1. parse()</label><br>
+                    <label><input type="radio" name="q5" value="2" required> 2. toString()</label><br>
+                    <label><input type="radio" name="q5" value="3" required> 3. int()</label><br>
+                    <label><input type="radio" name="q5" value="4" required> 4. convert()</label>
                 </div>
 
                 <!-- Question 6 -->
@@ -107,25 +107,23 @@
                     6. ข้อใดต่อไปนี้เป็นชนิดข้อมูลใน Python:
                 </div>
                 <div class="answer">
-                    <label><input type="radio" name="q6" value="1"> 1. string</label><br>
-                    <label><input type="radio" name="q6" value="2"> 2. number</label><br>
-                    <label><input type="radio" name="q6" value="3"> 3. char</label><br>
-                    <label><input type="radio" name="q6" value="4"> 4. double</label>
+                    <label><input type="radio" name="q6" value="1" required> 1. string</label><br>
+                    <label><input type="radio" name="q6" value="2" required> 2. number</label><br>
+                    <label><input type="radio" name="q6" value="3" required> 3. char</label><br>
+                    <label><input type="radio" name="q6" value="4" required> 4. double</label>
                 </div>
 
-                <!-- Other questions go here... -->
-
-                <!-- Question 11 (input question) -->
+                <!-- Question 7 -->
                 <div class="question">
                     7. ขอถามตอบทำไมต้องเรียน Python:
                 </div>
                 <div class="answer">
-                    <textarea name="q11" rows="4" class="form-control"></textarea>
+                    <textarea name="q11" rows="4" class="form-control" required></textarea>
                 </div>
 
                 <!-- Submit Button -->
                 <div class="text-center">
-                    <button type="submit" class="btn btn-success"><a href="../template">Submit</a></button>
+                    <button type="submit" class="btn btn-success">Submit</button>
                 </div>
             </form>
         </div>
@@ -133,35 +131,27 @@
 
     <script>
         document.getElementById("exam-form").addEventListener("submit", function (event) {
-            // หยุดการส่งฟอร์มถ้าเงื่อนไขไม่ครบ
             event.preventDefault();
 
-            // ตรวจสอบคำถามที่เป็น radio button
             let allQuestionsAnswered = true;
             let questions = document.querySelectorAll('.question');
             questions.forEach((question, index) => {
-                // ตรวจสอบว่ามีการเลือกตัวเลือกหรือยัง
                 let radioChecked = document.querySelector(`input[name="q${index + 1}"]:checked`);
                 if (!radioChecked) {
                     allQuestionsAnswered = false;
-                    // เลื่อนหน้าจอไปยังคำถามที่ยังไม่ได้ตอบ
                     question.scrollIntoView({ behavior: "smooth" });
-                    return; // หยุดการตรวจสอบคำถามต่อไป
+                    return;
                 }
             });
 
-            // ตรวจสอบคำถามที่เป็น textarea (ข้อ 11)
             let q11Text = document.querySelector('textarea[name="q11"]').value.trim();
             if (q11Text === '') {
                 allQuestionsAnswered = false;
-                // เลื่อนหน้าจอไปยัง textarea ที่ยังไม่ได้ตอบ
                 document.querySelector('textarea[name="q11"]').scrollIntoView({ behavior: "smooth" });
                 return;
             }
 
-            // ถ้าตอบครบทุกข้อ ให้ส่งฟอร์มได้
             if (allQuestionsAnswered) {
-                // ส่งฟอร์ม
                 this.submit();
             }
         });
