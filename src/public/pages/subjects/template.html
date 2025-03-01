@@ -18,10 +18,6 @@
             background-image: linear-gradient(to right, rgb(255, 229, 255), rgb(255, 255, 255));
         }
 
-        .bg-card_2 {
-            background-image: linear-gradient(to top, rgb(255, 229, 255), rgb(255, 255, 255));
-        }
-
         .hidden {
             display: none;
         }
@@ -35,10 +31,25 @@
     </style>
 
     <script>
-        const arr_list1 = document.querySelectorAll(".list1")
-        const arr_list2 = document.querySelectorAll(".list2")
-        const arr_list3 = document.querySelectorAll(".list1")
+        document.addEventListener('DOMContentLoaded', () => {
+            const sec_lesson = document.getElementsByClassName("list1")
+            // const sec_excercise = document.querySelectorAll(".list2")
+            // const sec_solution = document.querySelectorAll(".list3")
 
+            const lesson_button = document.getElementById('lesson')
+            const excercise_button = document.getElementById('excercise')
+            const solution_button = document.getElementById('solution')
+
+            function show_lesson() {
+                sec_lesson.classList.remove('hidden');
+                arr_excercise.foreach(item => item.classList.add('hidden'));
+                arr_solution.foreach(item => item.classList.add('hidden'));
+            }
+
+            lesson_button.addEventListener('click', show_lesson);
+            excercise_button.addEventListener('click', show_excercise);
+            solution_button.addEventListener('click', show_solution);
+        });
     </script>
 </head>
 
@@ -50,45 +61,66 @@
         <section class="choose_list d-flex inline">
 
             <div class=" form-check-inline">
-                <button onclick="">บทเรียน</button>
-                <button onclick="">แบบทดสอบ</button>
-                <button onclick="">เฉลยแบบทดสอบ</button>
+                <button onclick="" id="lesson">บทเรียน</button>
+                <button onclick="" id="excercise">แบบทดสอบ</button>
+                <button onclick="" id="solution">เฉลยแบบทดสอบ</button>
             </div>
         </section>
 
         <section class="excercise mt-4 mx-4">
-            <!-- card เนื้อหารายบทเรียน -->
-            <a href="#" class="text-decoration-none list1">
-                <div class="bg-card_1 p-3 card inline d-flex flex-row mt-4">
-                    <img src="../../images/placeholder.png" alt="" style="width: 120px; border-radius: 10px;">
-                    <div class="ps-3">
-                        <h4>บทเรียนที่ 1</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum alias assumenda dicta molestiae
-                            quasi consequuntur at ut animi, nulla sed! Dolorum laborum neque est minima! Vel in magni
-                        </p>
+            <!-- card บทเรียน -->
+            <section class="list1 hidden">
+                <a href="#" class="text-decoration-none items">
+                    <div class="bg-card_1 p-3 card inline d-flex flex-row mt-4">
+                        <img src="../../images/placeholder.png" alt=""
+                            style="width: 120px; height: 120px; border-radius: 10px;">
+                        <div class="ps-3">
+                            <h4>บทเรียนที่ 1</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum alias assumenda dicta
+                                molestiae
+                                quasi consequuntur at ut animi, nulla sed! Dolorum laborum neque est minima! Vel in
+                                magni
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </section>
             <!-- card แบบทดสอบ -->
-            <a href="#" class="text-decoration-none list2">
-                <div class="bg-card_2 p-3 card inline d-flex flex-row mt-4">
-                    <div class="ps-3">
-                        <h4>แบบทดสอบ บทที่ 1</h4>
-                        <ul>
-                            <li>เรื่อง</li>
-                            <li>ปรนัย 10ข้อ</li>
-                            <li>อัตนัย</li>
-                            <li>เวลา 25 นาที</li>
-                            <li>คะแนนเต็ม 10คะแนน</li>
-                        </ul>
-                        <button>ทำแบบทดสอบ</button>
+            <section class="list2 hidden">
+                <a href="#" class="text-decoration-none items">
+                    <div class="bg-card_2 p-3 card inline d-flex flex-row mt-4">
+                        <div class="ps-3">
+                            <h4>แบบทดสอบ บทที่ 1</h4>
+                            <ul>
+                                <li>เรื่อง</li>
+                                <li>ปรนัย 10 ข้อ</li>
+                                <li>อัตนัย 1 ข้อ</li>
+                                <li>เวลา 25 นาที</li>
+                                <li>คะแนนเต็ม 10 คะแนน</li>
+                            </ul>
+                            <button>ทำแบบทดสอบ</button>
+                        </div>
                     </div>
-                </div>
-            </a>
-
+                </a>
+            </section>
             <!-- card เฉลยแบบทดสอบ -->
-
-
+            <section class="list3 hidden">
+                <a href="#" class="text-decoration-none items">
+                    <div class="bg-card_3 p-3 card inline d-flex flex-row mt-4 hide">
+                        <div class="ps-3">
+                            <h4>เฉลย แบบทดสอบ บทที่ 1</h4>
+                            <ul>
+                                <li>คะแนนรวม : xx/xx</li>
+                                <li>ปรนัย : xx/xx</li>
+                                <li>อัตนัย : xx/xx</li>
+                                <li>สถานะ <b>ผ่าน</b></li>
+                            </ul>
+                            <button>ทำใหม่</button>
+                            <button>เฉลยคำตอบ</button>
+                        </div>
+                    </div>
+                </a>
+            </section>
 
         </section>
     </main>
