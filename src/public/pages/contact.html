@@ -19,29 +19,31 @@
         .message textarea {
             width: 100%;
             height: 150px;
-            padding: 12px 20px;
             box-sizing: border-box;
             border-radius: 4px;
             font-size: 16px;
             resize: none;
         }
 
-        .c-button button {
-            display: inline-flex;
-            margin: 0px 20px;
+        .c-button {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            margin: 10px 0;
             font-size: 16px;
-            padding: 5px 10px;
+            padding: 5px 0;
             border: none;
             border-radius: 7px;
         }
 
-        .c-button button[type="submit"] {
-            background-color: rgb(72, 232, 64);
-        }
-
-        .c-button button[type="reset"] {
-            background-color: rgb(255, 48, 48);
-            float: right;
+        .c-button button {
+            width: 100px;
+            min-width: fit-content;
+            padding: 5px 10px;
+            color: rgb(66, 66, 66);
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
         }
 
         .smth {
@@ -49,8 +51,13 @@
             border-radius: 7px;
         }
 
+        .main-content textarea {
+            height: 200px;
+            border-radius: 7px;
+        }
+
         @media (min-width: 768px) {
-            .main_content {
+            .main-content {
                 width: 75%;
             }
         }
@@ -62,8 +69,8 @@
     <div id="nav-placeholder"></div>
 
     <main class="contact">
-        <h1>ถามตอบอาจารย์</h1>
-        <div class="container main_content">
+        <h1>ติดต่ออาจารย์</h1>
+        <div class="container main-content">
 
             <select class="form-select mb-3" aria-label=".form-select-lg example" onchange="change_n()">
                 <option selected>เลือกรายวิชา</option>
@@ -73,34 +80,17 @@
                 <option value="4">วิชา Subject 104</option>
             </select>
 
-            <p id="prof_n">--เลือกรายวิชา--</p>
+            <h5>ข้อความ</h5>
+            <textarea type="text"></textarea>
 
-            <div class="input-group">
-                <span class="input-group-text">First name</span>
-                <span class="input-group-text">(student_first_name)</span>
-            </div>
+            <section class="c-button">
+                <button type="submit" onclick="location.reload()"
+                    style="background-color: lightgreen; border: 1px rgb(94, 209, 94) solid;">ตกลง</button>
+                <button type="reset" onclick="location.reload()"
+                    style="background-color: lightcoral; border: 1px rgb(209, 94, 94) solid;">ยกเลิก</button>
+            </section>
 
-            <div class="input-group">
-                <span class="input-group-text">Last name</span>
-                <span class="input-group-text">(student_last_name)</span>
-            </div>
-
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Email</span>
-                <span class="input-group-text">(Example@gmail.com)</span>
-            </div>
-
-            <p>--ข้อความ--</p>
-            <div class="message">
-                <textarea type="text"></textarea>
-            </div>
-
-            <div class="c-button">
-                <button type="submit" onclick="location.reload()">ตกลง</button>
-                <button type="reset" onclick="location.reload()">ยกเลิก</button>
-            </div>
-
-            <div class="mx-4 smth">
+            <div class="smth">
                 <p>กฎการส่งคำถาม ถามตอบรายวิชา</p>
                 <p>1.คำถามจะต้องเกี่ยวกับรายวิชานั้น</p>
                 <p>2.ไม่มีคำถามเกี่ยวกับเรื่องส่วนตัว</p>
