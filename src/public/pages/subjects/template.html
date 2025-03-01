@@ -29,28 +29,6 @@
             background: #000;
         }
     </style>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const sec_lesson = document.getElementsByClassName("list1")
-            // const sec_excercise = document.querySelectorAll(".list2")
-            // const sec_solution = document.querySelectorAll(".list3")
-
-            const lesson_button = document.getElementById('lesson')
-            const excercise_button = document.getElementById('excercise')
-            const solution_button = document.getElementById('solution')
-
-            function show_lesson() {
-                sec_lesson.classList.remove('hidden');
-                arr_excercise.foreach(item => item.classList.add('hidden'));
-                arr_solution.foreach(item => item.classList.add('hidden'));
-            }
-
-            lesson_button.addEventListener('click', show_lesson);
-            excercise_button.addEventListener('click', show_excercise);
-            solution_button.addEventListener('click', show_solution);
-        });
-    </script>
 </head>
 
 <body>
@@ -61,15 +39,15 @@
         <section class="choose_list d-flex inline">
 
             <div class=" form-check-inline">
-                <button onclick="" id="lesson">บทเรียน</button>
-                <button onclick="" id="excercise">แบบทดสอบ</button>
-                <button onclick="" id="solution">เฉลยแบบทดสอบ</button>
+                <button onclick="showContent(`lesson`)">บทเรียน</button>
+                <button onclick="showContent(`excercise`)">แบบทดสอบ</button>
+                <button onclick="showContent(`solution`)">เฉลยแบบทดสอบ</button>
             </div>
         </section>
 
-        <section class="excercise mt-4 mx-4">
+        <section class="content mt-4 mx-4">
             <!-- card บทเรียน -->
-            <section class="list1 hidden">
+            <section class="hidden" id="lesson">
                 <a href="#" class="text-decoration-none items">
                     <div class="bg-card_1 p-3 card inline d-flex flex-row mt-4">
                         <img src="../../images/placeholder.png" alt=""
@@ -86,7 +64,7 @@
                 </a>
             </section>
             <!-- card แบบทดสอบ -->
-            <section class="list2 hidden">
+            <section class="hidden" id="excercise">
                 <a href="#" class="text-decoration-none items">
                     <div class="bg-card_2 p-3 card inline d-flex flex-row mt-4">
                         <div class="ps-3">
@@ -104,7 +82,7 @@
                 </a>
             </section>
             <!-- card เฉลยแบบทดสอบ -->
-            <section class="list3 hidden">
+            <section class="hidden" id="solution">
                 <a href="#" class="text-decoration-none items">
                     <div class="bg-card_3 p-3 card inline d-flex flex-row mt-4 hide">
                         <div class="ps-3">
@@ -124,6 +102,21 @@
 
         </section>
     </main>
+
+    <script>
+        //initalize
+        showContent("lesson");
+
+        function showContent(contentName) {
+            var content = document.getElementById(contentName);
+            var contents = document.getElementsByClassName("hidden");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            content.style.display = "block";
+        }
+    </script>
+
 </body>
 
 </html>
