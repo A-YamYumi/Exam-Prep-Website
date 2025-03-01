@@ -16,8 +16,13 @@
     <script src="/javascripts/cookie-handler.js"></script>
 
     <style>
-        body {
-            background: url("images/univer.jpg") no-repeat center center fixed;
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(200, 130, 233, 0.76), rgba(255, 255, 255, 0)),
+                url("images/univer.jpg") no-repeat center center fixed;
+
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
@@ -27,10 +32,25 @@
         img {
             position: absolute;
         }
+
+        .container {
+            color: #323232;
+            border: 2px, solid, transparent;
+            background: linear-gradient(32deg, #5a346b 10%, rgb(255, 255, 255), #9c55bd 90%),
+                linear-gradient(64deg, #ffffff, #414141);
+            ;
+            border-radius: 10px;
+            background-clip: padding-box, border-box;
+            background-origin: padding-box, border-box;
+        }
     </style>
 </head>
 
 <body>
+    <div id="navbar-auth-placeholder"></div>
+
+    <div class="background"></div>
+
     <main class="container center row-gap-3">
         <section class="">
             <div class="d-flex justify-content-center">
@@ -49,30 +69,29 @@
 
             <div class="input_field">
                 <h5>Password</h5>
-                <input type="text" class="form-control " placeholder="Password">
+                <input type="text" class="form-control" placeholder="Password">
             </div>
 
             <div class="input_field">
                 <h5>Confirm Password</h5>
-                <input type="text" class="form-control" placeholder="Comfirm Password">
+                <input type="text" class="form-control" placeholder="Confirm Password">
             </div>
 
-            <div class="d-flex">
+            <div class="d-flex" style="margin-top: 10px;">
                 <input type="checkbox">
-                <p style="margin: auto 10px;">I accept this term and policy</p>
+                <p style="margin: auto 10px;">I accept the terms and policy</p>
             </div>
 
-
-            <div class="d-flex justify-content-center input_field ">
+            <div class="d-flex justify-content-center input_field">
                 <a href="/" class="deco_button">Sign in</a>
             </div>
 
-            <div class="input_field d-flex justify-content-center gap-3">
-                <a href="login">Already have an account?</a>
+            <div class="input_field d-flex gap-3">
+                <a href="login" style="color: lightskyblue;">Already have an account?</a>
             </div>
-
         </section>
     </main>
+
 </body>
 
 </html>

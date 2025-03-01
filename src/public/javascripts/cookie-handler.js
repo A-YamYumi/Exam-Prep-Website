@@ -5,19 +5,17 @@ if (user == "" || user == undefined) {
 }
 
 profile = document.getElementById("user-login")
-if (user == '1') {
-    profile.innerHTML = `<a href="#" class="d-inline bi bi-bell text-white"></a>
-    <a href="/user/profile" class="d-inline text-white mx-2 text-decoration-none">User_name</a>
-                <a href="#" class="d-inline bi bi-person text-white"></a>`
-} else {
-    profile.innerHTML = `
-    <a href="/login" class="d-inline text-white mx-2 text-decoration-none">Login</a>
-                <a href="#" class="d-inline bi bi-person text-white"></a>`
+if (profile != null) {
+    if (user == '1') {
+        profile.innerHTML = `<a href="#" class="d-inline bi bi-bell text-white"></a>
+        <a href="/user/profile" class="d-inline text-white mx-2 text-decoration-none">User_name</a>
+                    <a href="#" class="d-inline bi bi-person text-white"></a>`
+    } else {
+        profile.innerHTML = `
+        <a href="/login" class="d-inline text-white mx-2 text-decoration-none">Login</a>
+                    <a href="#" class="d-inline bi bi-person text-white"></a>`
+    }
 }
-
-console.log(document.cookie)
-console.log(user)
-
 
 function userValidation() {
     if (user != '1')

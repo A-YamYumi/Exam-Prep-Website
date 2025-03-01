@@ -1,10 +1,10 @@
 .bg-purple {
-    background-color: #b132c7;
+    background-color: #c848df;
 
 }
 
 .bg-dark-purple {
-    background-color: #c75fdb;
+    background-color: #b155c4;
 }
 
 @media (min-width: 768px) {
@@ -49,14 +49,17 @@
         -webkit-opacity: 0;
     }
 }
+
 .main-bg img {
     width: 100%;
     max-height: 200px;
 }
+
 .slideIn {
     -webkit-animation-name: slideIn;
     animation-name: slideIn;
 }
+
 .center {
     position: absolute;
     top: 50%;
@@ -97,11 +100,12 @@ input {
     margin-top: 10px;
     width: 100%;
     padding: 10px;
-    background: #000;
+    background-color: #303030;
     color: white;
     border-radius: 10px;
     text-decoration: none;
     text-align: center;
+    transition: background-color 0.3s;
 }
 
 /* .subjects {
@@ -143,7 +147,7 @@ input {
     max-height: 100%;
 } */
 
-.search-bar button{
+.search-bar button {
     float: right;
     padding: 6px 10px;
 }
@@ -153,19 +157,21 @@ input {
 }
 
 /* contact page */
-.contact{
+.contact {
     margin: 0px 10%;
 }
 
-.contact div{
+.contact div {
     padding: 12px;
 }
-.contact h1{
+
+.contact h1 {
     text-align: center;
     margin-bottom: 5px;
     margin: 12px 0px 12px;
 }
-.container{
+
+.container {
     background-color: #f2f2f2;
     display: flex;
     flex-direction: column;
@@ -176,6 +182,6 @@ input {
 
 
 /* booststrap edit */
-.form-select-lg{
+.form-select-lg {
     font-size: 1.15rem;
 }
