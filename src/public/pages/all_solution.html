@@ -40,6 +40,7 @@
             background: #000;
             border-radius: 5px;
             padding: 10px;
+            margin-bottom: 10px;
         }
     </style>
     <script>
@@ -58,8 +59,33 @@
 
         <section class="d-flex excercise-holder">
             <div class="card items">
-                <h5>รายวิชา xxxxx</h5>
-                <h6>บทที่ 1</h6>
+                <h5>รายวิชา xxxx1</h5>
+                <h6>บทที่ x</h6>
+                <ul>
+                    <li>เรื่อง</li>
+                    <li>คะแนนรวม : xx/xx</li>
+                    <li>ปรนัย : xx/xx</li>
+                    <li>อัตนัย : xx/xx</li>
+                    <li>คะแนนเต็ม xx/xx</li>
+                    <li>สถานะ : xx</li>
+                </ul>
+                <a href="/subjects/template/excercise">
+                    <div class="action-btn">
+                        ทำแบบทดสอบอีกครั้ง
+                    </div>
+                </a>
+
+                <a href="/subjects/template/answer">
+                    <div class="action-btn">
+                        เฉลยแบบทดสอบ
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="card items">
+                <h5>รายวิชา วิทยาศาสตร์</h5>
+                <h6>บทที่ x</h6>
                 <ul>
                     <li>เรื่อง</li>
                     <li>คะแนนรวม : xx/xx</li>
@@ -76,65 +102,82 @@
 
                 <a href="/subjects/template/excercise">
                     <div class="action-btn">
+                        เฉลยแบบทดสอบ
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="card items">
+                <h5>รายวิชา คอมพิวเตอร์</h5>
+                <h6>บทที่ x</h6>
+                <ul>
+                    <li>เรื่อง</li>
+                    <li>คะแนนรวม : xx/xx</li>
+                    <li>ปรนัย : xx/xx</li>
+                    <li>อัตนัย : xx/xx</li>
+                    <li>คะแนนเต็ม xx/xx</li>
+                    <li>สถานะ : xx</li>
+                </ul>
+                <a href="/subjects/template/excercise">
+                    <div class="action-btn">
                         ทำแบบทดสอบอีกครั้ง
                     </div>
                 </a>
 
+                <a href="/subjects/template/excercise">
+                    <div class="action-btn">
+                        เฉลยแบบทดสอบ
+                    </div>
+                </a>
+
             </div>
 
             <div class="card items">
-                <h5>รายวิชา xxxxx</h5>
+                <h5>รายวิชา AI</h5>
                 <h6>บทที่ x</h6>
                 <ul>
                     <li>เรื่อง</li>
-                    <li>ปรนัย x ข้อ</li>
-                    <li>อัตนัย x ข้อ</li>
-                    <li>เวลา xx นาที</li>
-                    <li>คะแนนเต็ม xx คะแนน</li>
+                    <li>คะแนนรวม : xx/xx</li>
+                    <li>ปรนัย : xx/xx</li>
+                    <li>อัตนัย : xx/xx</li>
+                    <li>คะแนนเต็ม xx/xx</li>
+                    <li>สถานะ : xx</li>
                 </ul>
-                <a href="#">
+                <a href="/subjects/template/excercise">
                     <div class="action-btn">
-                        ทำแบบทดสอบ
+                        ทำแบบทดสอบอีกครั้ง
                     </div>
                 </a>
-            </div>
 
-            <div class="card items">
-                <h5>รายวิชา xxxxx</h5>
-                <h6>บทที่ x</h6>
-                <ul>
-                    <li>เรื่อง</li>
-                    <li>ปรนัย x ข้อ</li>
-                    <li>อัตนัย x ข้อ</li>
-                    <li>เวลา xx นาที</li>
-                    <li>คะแนนเต็ม xx คะแนน</li>
-                </ul>
-                <a href="#">
+                <a href="/subjects/template/excercise">
                     <div class="action-btn">
-                        ทำแบบทดสอบ
+                        เฉลยแบบทดสอบ
                     </div>
                 </a>
-            </div>
 
-            <div class="card items">
-                <h5>รายวิชา xxxxx</h5>
-                <h6>บทที่ x</h6>
-                <ul>
-                    <li>เรื่อง</li>
-                    <li>ปรนัย x ข้อ</li>
-                    <li>อัตนัย x ข้อ</li>
-                    <li>เวลา xx นาที</li>
-                    <li>คะแนนเต็ม xx คะแนน</li>
-                </ul>
-                <a href="#">
-                    <div class="action-btn">
-                        ทำแบบทดสอบ
-                    </div>
-                </a>
             </div>
 
         </section>
     </main>
+
+    <script>
+
+        var usr_input = document.getElementById('usr_input');
+
+        usr_input.addEventListener('keyup', (e) => {
+            const search = e.target.value.toLowerCase();
+            const items = document.querySelectorAll('.items');
+
+            items.forEach((item) => {
+                if (item.textContent.toLowerCase().includes(search)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

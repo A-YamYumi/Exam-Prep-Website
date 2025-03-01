@@ -36,6 +36,12 @@
             background-color: #000;
             color: white;
         }
+
+        .list-botton {
+            border-radius: 5px;
+            border: none;
+            background: #bfbfbf;
+        }
     </style>
 </head>
 
@@ -47,9 +53,9 @@
         <section class="choose_list d-flex inline">
 
             <div class=" form-check-inline">
-                <button onclick="showContent(`lesson`)">บทเรียน</button>
-                <button onclick="showContent(`excercise`)">แบบทดสอบ</button>
-                <button onclick="showContent(`solution`)">เฉลยแบบทดสอบ</button>
+                <button class="list-botton" onclick="showContent(`lesson`)">บทเรียน</button>
+                <button class="list-botton" onclick="showContent(`excercise`)">แบบทดสอบ</button>
+                <button class="list-botton" onclick="showContent(`solution`)">เฉลยแบบทดสอบ</button>
             </div>
         </section>
 
