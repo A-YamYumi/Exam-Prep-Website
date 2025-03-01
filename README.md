@@ -7,7 +7,7 @@ The assignment from the professor.
 
 ```bash
 # Clone the directory into your folder.
-git clone https://github.com/ZartexVertagen/Exam-Prep-Website.git
+git clone https://github.com/A-YamYumi/Exam-Prep-Website.git
 cd Exam-Prep-Website
 
 # Install all the required dependencies.
