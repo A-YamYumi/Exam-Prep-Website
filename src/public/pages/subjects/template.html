@@ -28,6 +28,14 @@
             color: white;
             background: #000;
         }
+
+        .ans-btn {
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #000;
+            color: white;
+        }
     </style>
 </head>
 
@@ -35,7 +43,7 @@
     <div id="nav-placeholder"></div>
 
     <main class="mx-5 mt-4">
-        <h4>วิชา #####1</h4>
+        <h4>วิชา #####x</h4>
         <section class="choose_list d-flex inline">
 
             <div class=" form-check-inline">
@@ -88,21 +96,20 @@
             </section>
             <!-- card เฉลยแบบทดสอบ -->
             <section class="hidden" id="solution">
-                <a href="#" class="text-decoration-none items">
-                    <div class="bg-card_3 p-3 card inline d-flex flex-row mt-4 hide">
-                        <div class="ps-3">
-                            <h4>เฉลย แบบทดสอบ บทที่ 1</h4>
-                            <ul>
-                                <li>คะแนนรวม : xx/xx</li>
-                                <li>ปรนัย : xx/xx</li>
-                                <li>อัตนัย : xx/xx</li>
-                                <li>สถานะ <b>ผ่าน</b></li>
-                            </ul>
-                            <button>ทำใหม่</button>
-                            <button>เฉลยคำตอบ</button>
-                        </div>
+                <div class="bg-card_3 p-3 card inline d-flex flex-row mt-4 hide">
+                    <div class="ps-3">
+                        <h4>เฉลย แบบทดสอบ บทที่ 1</h4>
+                        <ul>
+                            <li>คะแนนรวม : xx/xx</li>
+                            <li>ปรนัย : xx/xx</li>
+                            <li>อัตนัย : xx/xx</li>
+                            <li>สถานะ <b>ผ่าน</b></li>
+                        </ul>
+                        <a href="template/excercise" class="ans-btn">ทำแบบทดสอบอีกครั้ง</a>
+                        <a href="template/answer" class="ans-btn">เฉลยแบบทดสอบ</a>
+
                     </div>
-                </a>
+                </div>
             </section>
 
         </section>
