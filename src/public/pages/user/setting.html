@@ -13,8 +13,6 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/javascripts/load-components.js"></script>
-    <script src="/javascripts/search_func.js"></script>
-
     <style>
         .setting {
             display: flex;
@@ -24,14 +22,52 @@
             margin-bottom: 15px;
         }
 
+        .selections {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: stretch;
+        }
+
+        .select-choice {
+            text-align: left;
+            padding: 10px;
+            border: none;
+            border-left: 2px solid transparent;
+        }
+
+        .select-choice.on-page {
+            background-color: rgb(226, 226, 226);
+            border-left: 2px solid rgb(66, 66, 66);
+        }
+
+        .select-choice:hover {
+            background-color: rgb(177, 177, 177);
+            border-left: 2px solid rgb(66, 66, 66);
+        }
+
+        .select-choice:hover[id="logout"] {
+            color: white;
+            background-color: rgb(255, 139, 139);
+            border-left: 2px solid rgb(134, 51, 51);
+        }
+
+        .select-choice:hover[id="professor-debug"] {
+            color: white;
+            background-color: rgb(139, 209, 255);
+            border-left: 2px solid rgb(51, 63, 134);
+        }
+
+
         .profile-img img {
             width: 225px;
             height: 225px;
-            border-radius: 50%;
+            border-radius: 10px;
         }
 
         .profile-info {
             width: 400px;
+            min-height: 60vh;
         }
 
         .info-box {
@@ -44,18 +80,13 @@
             border-radius: 10px;
         }
 
-        .select-choice {
-            padding: 20px;
-            background: rgb(238, 238, 238);
-            text-decoration: none;
-        }
-
         a {
             text-decoration: none;
             color: black;
         }
 
-        .hidden {
+        .hidden,
+        .hidden-btn {
             display: none;
         }
     </style>
@@ -71,17 +102,23 @@
     <main class="setting">
 
         <section class="d-flex profile-info" style="background-color: rgb(238, 238, 238);">
-            <div class="col-3 p-3">
-                <div class="select-choice">Profile</div>
-                <div class="select-choice">Notification</div>
-                <div class="select-choice"><a href="/login" onclick="setLogout()">Log out</a></div>
+            <div class="col-3 p-3 selections">
+                <button class="select-choice" id="p-button"
+                    onclick="showContent(`profile`, `p-button`)">Profile</button>
+                <button class="select-choice" id="n-button"
+                    onclick="showContent(`notification`, `n-button`)">Notification</button>
+                <button class="select-choice hidden-btn" id="pro-button"
+                    onclick="showContent(`professor`, `pro-button`)">Upload Lesson</button>
+                <button class="select-choice" id="logout" onclick="setLogout(); location.href=`/login`">Log out</button>
+                <button class="select-choice" id="professor-debug"
+                    onclick="toggleProfessor(); location.reload()">Professor Debug</button>
             </div>
 
             <div class="col-7 p-3 ">
-                <section class=" p-4 hidden">
+                <section class=" p-4 hidden" id="profile">
                     <h3>Profile</h3>
                     <div class="profile-img my-3">
-                        <img src="/images/placeholder.png" alt="">
+                        <img src="/images/placeholder-profile.jpg" alt="">
                     </div>
 
                     <div class="user-info mt-2 ">
@@ -112,7 +149,7 @@
                     </div>
                 </section>
 
-                <section class="p-4 hidden">
+                <section class="p-4 hidden" id="notification">
                     <h3>Notification</h3>
                     <div class="form-check form-switch my-3">
                         <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
@@ -132,10 +169,59 @@
                     </div>
 
                 </section>
+
+                <section class="p-4 hidden" id="professor">
+                    <h3>Upload Content</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quo, tenetur repellat vitae
+                        cupiditate officia minus vel ipsam voluptatem, dolorum earum alias adipisci nisi est vero at
+                        laborum assumenda eveniet.</p>
             </div>
 
         </section>
     </main>
+
+    <script>
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        showContent("profile", "p-button");
+
+        if (getCookie("isProfessor") == "1") {
+            console.log(getCookie("isProfessor"));
+            document.getElementById("pro-button").classList.remove("hidden-btn");
+        }
+
+        function showContent(contentName, selector) {
+            var selectors = document.getElementsByClassName("select-choice");
+            for (var i = 0; i < selectors.length; i++) {
+                selectors[i].classList.remove("on-page");
+            }
+            var selector = document.getElementById(selector);
+            selector.classList.add("on-page");
+            var content = document.getElementById(contentName);
+            var contents = document.getElementsByClassName("hidden");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+                contents[i].classList.remove("on-page");
+            }
+            content.classList.add("on-page");
+            content.style.display = "block";
+        }
+    </script>
 </body>
 
 </html>

@@ -1,3 +1,4 @@
+<script src="/javascripts/cookie-handler.js"></script>
 <nav class="navbar navbar-dark navbar-expand-lg bg-purple">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">Exam Prep</a>
@@ -33,7 +34,9 @@
                 </li>
             </ul>
             <div class="ms-auto d-flex align-items-center" id="user-login">
-                <script src="/javascripts/cookie-handler.js"></script>
+                <script>
+                    setupNavbar();
+                </script>
                 <!-- temporary to login -->
             </div>
         </div>
