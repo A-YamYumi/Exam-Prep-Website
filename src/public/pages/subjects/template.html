@@ -14,72 +14,83 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../javascripts/load-components.js"></script>
     <style>
-        .subj div {
-            margin: 3% 10% 3% 10%;
-            background-color: rgb(209, 209, 209);
-            color: rgb(0, 0, 0);
-            padding: 17px;
-            border-radius: 10px;
-            border-color: rgb(181, 181, 181);
-            ;
-            box-sizing: border-box;
+        .bg-card_1 {
+            background-image: linear-gradient(to right, rgb(255, 229, 255), rgb(255, 255, 255));
         }
 
-        @media (max-width: 768px) {
-            .subj div {
-                margin: 5% 13%;
-            }
+        .bg-card_2 {
+            background-image: linear-gradient(to top, rgb(255, 229, 255), rgb(255, 255, 255));
         }
 
-        .subj a {
-            text-decoration: none;
+        .hidden {
+            display: none;
         }
 
-        .subj p {
-            font-size: 12px;
-            text-indent: 15px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowarp;
+        .bg-card_2 button {
+            padding: 7px;
+            border-radius: 8px;
+            color: white;
+            background: #000;
         }
     </style>
-    <!-- component -->
+
+    <script>
+        const arr_list1 = document.querySelectorAll(".list1")
+        const arr_list2 = document.querySelectorAll(".list2")
+        const arr_list3 = document.querySelectorAll(".list1")
+
+    </script>
 </head>
 
 <body>
     <div id="nav-placeholder"></div>
 
-    <main class="subj">
-        <a href="/subjects/template/answer_template" class="buttons">
-            <div class="info">
-                <h5>บทที่ 1 ##### #####</h5>
-                <p>รายละเอียด
-                    '=============================================================================================='</p>
+    <main class="mx-5 mt-4">
+        <h4>วิชา #####1</h4>
+        <section class="choose_list d-flex inline">
+
+            <div class=" form-check-inline">
+                <button onclick="">บทเรียน</button>
+                <button onclick="">แบบทดสอบ</button>
+                <button onclick="">เฉลยแบบทดสอบ</button>
             </div>
-        </a>
-        <a href="/subjects/template/answer_template" class="buttons">
-            <div class="info">
-                <h5>บทที่ 2 ##### #####</h5>
-                <p>รายละเอียด
-                    '=============================================================================================='</p>
-            </div>
-        </a>
-        <a href="/subjects/template/answer_template" class="buttons">
-            <div class="info">
-                <h5>บทที่ 3 ##### #####</h5>
-                <p>รายละเอียด
-                    '=============================================================================================='
-                </p>
-            </div>
-        </a>
-        <a href="/subjects/template/answer_template" class="buttons">
-            <div class="info">
-                <h5>บทที่ 4 ##### #####</h5>
-                <p>รายละเอียด
-                    '=============================================================================================='
-                </p>
-            </div>
-        </a>
+        </section>
+
+        <section class="excercise mt-4 mx-4">
+            <!-- card เนื้อหารายบทเรียน -->
+            <a href="#" class="text-decoration-none list1">
+                <div class="bg-card_1 p-3 card inline d-flex flex-row mt-4">
+                    <img src="../../images/placeholder.png" alt="" style="width: 120px; border-radius: 10px;">
+                    <div class="ps-3">
+                        <h4>บทเรียนที่ 1</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum alias assumenda dicta molestiae
+                            quasi consequuntur at ut animi, nulla sed! Dolorum laborum neque est minima! Vel in magni
+                        </p>
+                    </div>
+                </div>
+            </a>
+            <!-- card แบบทดสอบ -->
+            <a href="#" class="text-decoration-none list2">
+                <div class="bg-card_2 p-3 card inline d-flex flex-row mt-4">
+                    <div class="ps-3">
+                        <h4>แบบทดสอบ บทที่ 1</h4>
+                        <ul>
+                            <li>เรื่อง</li>
+                            <li>ปรนัย 10ข้อ</li>
+                            <li>อัตนัย</li>
+                            <li>เวลา 25 นาที</li>
+                            <li>คะแนนเต็ม 10คะแนน</li>
+                        </ul>
+                        <button>ทำแบบทดสอบ</button>
+                    </div>
+                </div>
+            </a>
+
+            <!-- card เฉลยแบบทดสอบ -->
+
+
+
+        </section>
     </main>
 </body>
 

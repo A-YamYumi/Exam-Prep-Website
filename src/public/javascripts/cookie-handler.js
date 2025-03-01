@@ -6,10 +6,12 @@ if (user == "" || user == undefined) {
 
 profile = document.getElementById("user-login")
 if (user == '1') {
-    profile.innerHTML = `<a href="#" class="d-inline text-white mx-2 text-decoration-none" onclick="setLogout()">User_name</a>
+    profile.innerHTML = `<a href="#" class="d-inline bi bi-bell text-white"></a>
+    <a href="#" class="d-inline text-white mx-2 text-decoration-none" onclick="setLogout()">User_name</a>
                 <a href="#" class="d-inline bi bi-person text-white"></a>`
 } else {
-    profile.innerHTML = `<a href="/login" class="d-inline text-white mx-2 text-decoration-none">Login</a>
+    profile.innerHTML = `
+    <a href="/login" class="d-inline text-white mx-2 text-decoration-none">Login</a>
                 <a href="#" class="d-inline bi bi-person text-white"></a>`
 }
 
