@@ -50,6 +50,18 @@ $(function () {
 });
 
 $(function () {
+
+    let path = "/components/all-excercise-compo";
+    let placeholders = document.getElementsByClassName("all-excercise-placeholder");
+
+    for (let i = 0; i < placeholders.length; i++) {
+        $.get(path, function (data) {
+            $(placeholders[i]).html(data);
+        });
+    }
+});
+
+$(function () {
     let path = "/components/navbar-auth";
 
     $.get(path, function (data) {
