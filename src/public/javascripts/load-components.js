@@ -9,18 +9,24 @@ $(function () {
 $(function () {
 
     let path = "/components/subj-card";
-    let placeholders = [
-        "#subject-placeholder-1",
-        "#subject-placeholder-2",
-        "#subject-placeholder-3",
-        "#subject-placeholder-4"
-    ]
+    let placeholders = document.getElementsByClassName("subject-placeholder");
+    console.log(placeholders);
 
-    placeholders.forEach(function (placeholder) {
+
+
+    // let placeholders = [
+    //     "#subject-placeholder-1",
+    //     "#subject-placeholder-2",
+    //     "#subject-placeholder-3",
+    //     "#subject-placeholder-4"
+    // ]
+
+    //load components
+    for (let i = 0; i < placeholders.length; i++) {
         $.get(path, function (data) {
-            $(placeholder).html(data);
+            $(placeholders[i]).html(data);
         });
-    });
+    }
 });
 
 $(function () {
