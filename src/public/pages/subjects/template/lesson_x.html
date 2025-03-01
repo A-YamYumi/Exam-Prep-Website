@@ -78,12 +78,12 @@
 
     .btn-color {
         background: #27004a;
-        transform: background-color 0.5s ease-in;
+        transition: background-color 0.2s ease-in;
     }
 
     .btn-color:hover {
         background: #7600de;
-        transform: background-color 0.5s ease-in;
+        transition: background-color 0.2s ease-in;
     }
 
     .arrow-mod {
@@ -95,19 +95,20 @@
     }
 
     .back-style {
+        width: max-content;
         text-decoration: none;
         color: white;
         border-radius: 10px;
-        background: #b132c7;
-        transform: background-color 0.5s ease-in;
+        background-color: #b132c7;
+        transition: background-color 0.1s ease-in;
     }
 
     .back-style:hover {
         text-decoration: none;
         color: white;
         border-radius: 10px;
-        background: #5d0c6c;
-        transform: background-color 0.5s ease-in;
+        background-color: #5d0c6c;
+        transition: background-color 0.1s ease-in;
     }
 </style>
 
@@ -115,8 +116,8 @@
     <div id="nav-placeholder"></div>
 
     <main class="m-2">
-        <div class="px-3 py-2 ms-5">
-            <a href="../template" class="bi bi-arrow-left back-style px-3 py-2 ms-2"> ย้อนกลับ</a>
+        <div class="container mt-1" style="background-color: transparent; padding: 0;">
+            <a href="../template" class="bi bi-arrow-left back-style px-3 py-2"> ย้อนกลับ</a>
         </div>
 
         <section class="container p-3 mt-1">
