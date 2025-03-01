@@ -1,10 +1,21 @@
 let user = getCookie("isLogin")
 if (user == "" || user == undefined) {
     setCookie("isLogin", 0)
+    user = getCookie("isLogin")
+}
+
+profile = document.getElementById("user-login")
+if (user == '1') {
+    profile.innerHTML = `<a href="#" class="d-inline text-white mx-2 text-decoration-none" onclick="setLogout()">User_name</a>
+                <a href="#" class="d-inline bi bi-person text-white"></a>`
+} else {
+    profile.innerHTML = `<a href="#" class="d-inline text-white mx-2 text-decoration-none" onclick="setLogin()">Login</a>
+                <a href="#" class="d-inline bi bi-person text-white"></a>`
 }
 
 console.log(document.cookie)
 console.log(user)
+
 
 function userValidation() {
     if (user != '1')
@@ -13,10 +24,13 @@ function userValidation() {
 
 function setLogin() {
     setCookie("isLogin", 1)
+    //reload page
+    location.reload()
 }
 
 function setLogout() {
     setCookie("isLogin", 0)
+    location.reload()
 }
 
 function setCookie(cname, cvalue) {
