@@ -12,8 +12,6 @@ $(function () {
     let placeholders = document.getElementsByClassName("subject-placeholder");
     console.log(placeholders);
 
-
-
     // let placeholders = [
     //     "#subject-placeholder-1",
     //     "#subject-placeholder-2",
@@ -35,4 +33,16 @@ $(function () {
     $.get(path, function (data) {
         $("#scroll_item").html(data);
     });
+});
+
+$(function () {
+
+    let path = "/components/lesson_compo";
+    let placeholders = document.getElementsByClassName("lesson-placeholder");
+
+    for (let i = 0; i < placeholders.length; i++) {
+        $.get(path, function (data) {
+            $(placeholders[i]).html(data);
+        });
+    }
 });
