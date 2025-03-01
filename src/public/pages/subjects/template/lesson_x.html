@@ -13,6 +13,10 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/javascripts/load-components.js"></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/a11y-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 </head>
 
 <style>
@@ -24,6 +28,7 @@
         overflow: hidden;
         position: relative;
         /* This makes the buttons position relative to this container */
+        margin-bottom: 10px;
     }
 
     .ss_image {
@@ -44,16 +49,80 @@
     .change_slide button {
         margin: 0 10px;
     }
+
+
+    .link-style {
+        text-decoration: none;
+        padding: 10px;
+        color: rgb(0, 0, 0);
+        background-color: rgb(180, 180, 180);
+        border-radius: 10px;
+        transition: background-color 0.5s ease-in,
+            color 0.5s ease-in;
+    }
+
+    .link-style:hover {
+        text-decoration: none;
+        padding: 10px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(48, 48, 48);
+        border-radius: 10px;
+        transition: background-color 0.5s ease-in,
+            color 0.5s ease-in;
+    }
+
+    .code-block {
+        border-radius: 10px;
+        max-height: 500px;
+    }
+
+    .btn-color {
+        background: #27004a;
+        transform: background-color 0.5s ease-in;
+    }
+
+    .btn-color:hover {
+        background: #7600de;
+        transform: background-color 0.5s ease-in;
+    }
+
+    .arrow-mod {
+        color: white;
+    }
+
+    .bi-arrow-left:hover {
+        color: white;
+    }
+
+    .back-style {
+        text-decoration: none;
+        color: white;
+        border-radius: 10px;
+        background: #b132c7;
+        transform: background-color 0.5s ease-in;
+    }
+
+    .back-style:hover {
+        text-decoration: none;
+        color: white;
+        border-radius: 10px;
+        background: #5d0c6c;
+        transform: background-color 0.5s ease-in;
+    }
 </style>
 
 <body>
     <div id="nav-placeholder"></div>
 
-    <main class="mx-5 mt-5">
-        <section class="container">
+    <main class="m-2">
+        <div class="px-3 py-2 ms-5">
+            <a href="../template" class="bi bi-arrow-left back-style px-3 py-2 ms-2"> ย้อนกลับ</a>
+        </div>
+
+        <section class="container p-3 mt-1">
             <div class="p-3">
-                <h4>บทที่ 1</h4>
-                <p>Preview</p>
+                <h2>บทที่ x</h2>
+                <h5>Preview</h5>
                 <div class="slide_show">
                     <img class="ss_image" style="width: 100%;" src="../../../images/Binary-Tree.png" alt="">
                     <img class="ss_image" style="width: 100%; display: none;"
@@ -63,17 +132,85 @@
                     <img class="ss_image" style="width: 100%; display: none;"
                         src="../../../images/Insertion-in-Binary-Tree.png" alt="">
                     <div class="d-flex change_slide">
-                        <button class="btn btn-primary" onclick="currentDiv(-1)"><i
-                                class="bi bi-arrow-left"></i></button>
-                        <button class="btn btn-primary" onclick="currentDiv(1)"><i
-                                class="bi bi-arrow-right"></i></button>
+                        <button class="btn btn-color" onclick="currentDiv(-1)"><i
+                                class="bi bi-arrow-left arrow-mod"></i></button>
+                        <button class="btn btn-color" onclick="currentDiv(1)"><i
+                                class="bi bi-arrow-right arrow-mod"></i></button>
                     </div>
                 </div>
                 <a href="https://1drv.ms/p/c/6e7d6ec5992df48f/EccBkZ3W5fhNvRVdDCGj5j0BpvpEkdFVB_8cs5CIU7tksQ?e=eMxdBV"
-                    target="_blank">
-                    <div class="p-3 link-style">Presentation place-holder</div>
-                </a>
+                    target="_blank" class="link-style">Presentation Placeholder.pptx</a>
+
+                <a href="https://s2.q4cdn.com/175719177/files/doc_presentations/Placeholder-PDF.pdf" target="_blank"
+                    class="link-style">PDF Placeholder.pdf</a>
+                <div class="mt-5">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore earum veniam debitis ex aliquam.
+                        Perferendis sit est totam temporibus deleniti, repellat, non nesciunt ab odio quisquam veritatis
+                        deserunt quasi ratione?</p>
+                </div>
+                <pre><code class="language-python code-block">class Node:
+    def __init__(self, data):
+            self.data = data
+            self.left = None
+            self.right = None
+
+    # In-order DFS: Left, Root, Right
+    def in_order_dfs(node):
+        if node is None:
+            return
+        in_order_dfs(node.left)
+        print(node.data, end=' ')
+        in_order_dfs(node.right)
+
+    # Pre-order DFS: Root, Left, Right
+    def pre_order_dfs(node):
+        if node is None:
+            return
+        print(node.data, end=' ')
+        pre_order_dfs(node.left)
+        pre_order_dfs(node.right)
+
+    # Post-order DFS: Left, Right, Root
+    def post_order_dfs(node):
+        if node is None:
+            return
+        post_order_dfs(node.left)
+        post_order_dfs(node.right)
+        print(node.data, end=' ')
+
+    # BFS: Level order traversal
+    def bfs(root):
+        if root is None:
+            return
+        queue = [root]
+        while queue:
+            node = queue.pop(0)
+            print(node.data, end=' ')
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+
+    if __name__ == "__main__":
+        # Creating the tree
+        root = Node(2)
+        root.left = Node(3)
+        root.right = Node(4)
+        root.left.left = Node(5)
+
+        print("In-order DFS: ", end='')
+        in_order_dfs(root)
+        print("\nPre-order DFS: ", end='')
+        pre_order_dfs(root)
+        print("\nPost-order DFS: ", end='')
+        post_order_dfs(root)
+        print("\nLevel order: ", end='')
+        bfs(root)
+        # Credit to geekforgeeks
+                </code></pre>
             </div>
+            <a href="https://www.geeksforgeeks.org/introduction-to-binary-tree/" class="link-style">link to
+                Geekforgeeks</a>
         </section>
     </main>
 
@@ -93,6 +230,7 @@
             }
             x[slideIndex - 1].style.display = "block";
         }
+        hljs.highlightAll();
     </script>
 </body>
 
