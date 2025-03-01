@@ -16,9 +16,49 @@
 
     <style>
         .solution-screen {
-            background: #c8c8c8;
             padding: 20px;
+            background: #b3b3b3;
+            width: 80%;
+            margin: auto;
             border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+
+        .video-holder {
+            position: relative;
+            width: 40%;
+            padding-top: 25%;
+            background-color: #000;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .video-holder iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .card {
+            width: 60%;
+        }
+
+        .file-btn {
+            text-decoration: none;
+            border-radius: 5px;
+            width: fit-content;
+            padding: 10px;
+            color: white;
+            background-color: #924cbb;
+            transition: background-color 0.2s ease-in;
+        }
+
+        .file-btn:hover {
+            background-color: #9a63b9;
         }
     </style>
 </head>
@@ -26,28 +66,27 @@
 <body>
     <div id="nav-placeholder"></div>
 
-    <main>
-        <section class=" solution-screen mt-5 mx-5 d-flex inline">
-            <div class="">
-                <iframe width=" 640" height="315" src="https://www.youtube.com/embed/H5JubkIy_p8?si=r194LoT6FGRZ-yed"
-                    title="YouTube video player" frameborder="0"
+    <main class="d-flex justify-content-center">
+        <section class="solution-screen mt-5 mx-5 gap-3">
+            <div class="video-holder">
+                <iframe src="https://www.youtube.com/embed/H5JubkIy_p8?si=r194LoT6FGRZ-yed" title="YouTube video player"
+                    frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-            <div class="card mx-2 p-3">
-                <h2>บทที่ 1</h2>
-                <h5>lorem</h5>
+            <div class="card p-3 d-flex flex-column justify-content-between">
+                <div class="information">
+                    <h2>บทที่ 1</h2>
+                    <h5>lorem</h5>
 
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam incidunt in tempore excepturi
-                    dignissimos. Accusamus dicta dolores corporis deleniti illum, tempore inventore dolor quia
-                    doloremque laudantium voluptas at! Dolorem, voluptates!</p>
-                <p>#Credit : mycodeschool</p>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam incidunt in tempore excepturi
+                        dignissimos. Accusamus dicta dolores corporis deleniti illum, tempore inventore dolor quia
+                        doloremque laudantium voluptas at! Dolorem, voluptates!</p>
+                    <p>#Credit : mycodeschool</p>
+                </div>
 
-                <a href="https://s2.q4cdn.com/175719177/files/doc_presentations/Placeholder-PDF.pdf">
-                    <div class="file-holder">
-                        
-                    </div>
-                </a>
+                <a href="/pdfs/Placeholder-PDF.pdf" target="_blank" class="file-btn bi bi-filetype-pdf"> PDF Answers and
+                    Solutions</a>
             </div>
         </section>
     </main>
