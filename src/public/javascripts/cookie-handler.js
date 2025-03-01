@@ -4,6 +4,10 @@ if (user == "" || user == undefined) {
     user = getCookie("isLogin")
 }
 
+if (getCookie("isProfessor") == "" || getCookie("isProfessor") == undefined) {
+    setCookie("isProfessor", 0)
+}
+
 profile = document.getElementById("user-login")
 if (profile != null) {
     if (user == '1') {
