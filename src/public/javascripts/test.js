@@ -13,12 +13,10 @@ function userValidation() {
 
 function setLogin() {
     setCookie("isLogin", 1)
-    console.log(document.cookie)
 }
 
 function setLogout() {
     setCookie("isLogin", 0)
-    console.log(document.cookie)
 }
 
 function setCookie(cname, cvalue) {
