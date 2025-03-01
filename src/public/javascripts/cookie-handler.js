@@ -9,7 +9,7 @@ if (user == '1') {
     profile.innerHTML = `<a href="#" class="d-inline text-white mx-2 text-decoration-none" onclick="setLogout()">User_name</a>
                 <a href="#" class="d-inline bi bi-person text-white"></a>`
 } else {
-    profile.innerHTML = `<a href="#" class="d-inline text-white mx-2 text-decoration-none" onclick="setLogin()">Login</a>
+    profile.innerHTML = `<a href="/login" class="d-inline text-white mx-2 text-decoration-none">Login</a>
                 <a href="#" class="d-inline bi bi-person text-white"></a>`
 }
 
