@@ -38,6 +38,18 @@ $(function () {
 });
 
 $(function () {
+
+    let path = "/components/noti-item";
+    let placeholders = document.getElementsByClassName("noti-placeholder");
+
+    for (let i = 0; i < placeholders.length; i++) {
+        $.get(path, function (data) {
+            $(placeholders[i]).html(data);
+        });
+    }
+});
+
+$(function () {
     let path = "/components/navbar-auth";
 
     $.get(path, function (data) {

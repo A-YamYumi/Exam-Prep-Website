@@ -11,7 +11,7 @@ if (getCookie("isProfessor") == "" || getCookie("isProfessor") == undefined) {
 profile = document.getElementById("user-login")
 if (profile != null) {
     if (user == '1') {
-        profile.innerHTML = `<a href="#" class="d-inline bi bi-bell text-white"></a>
+        profile.innerHTML = `<a href="/user/notification" class="d-inline bi bi-bell text-white"></a>
         <a href="/user/setting" class="d-inline text-white mx-2 text-decoration-none">User_name</a>
                     <a href="#" class="d-inline bi bi-person text-white"></a>`
     } else {
