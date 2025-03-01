@@ -15,18 +15,10 @@
     <script src="../../javascripts/load-components.js"></script>
 
     <style>
-        .vid-frame {
-            margin-top: 5%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .file-holder {
-            background-color: rgb(202, 202, 202);
-            margin: 3% 10%;
-            padding: 15px;
-            border-radius: 7px;
+        .solution-screen {
+            background: #c8c8c8;
+            padding: 20px;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -35,15 +27,23 @@
     <div id="nav-placeholder"></div>
 
     <main>
-        <div class="vid-frame">
-            <video width="960px" controls>
-                <source src>
-            </video>
-        </div>
+        <section class=" solution-screen mt-5 mx-5 d-flex inline">
+            <div class="">
+                <iframe width=" 640" height="315" src="https://www.youtube.com/embed/H5JubkIy_p8?si=r194LoT6FGRZ-yed"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="card mx-2 p-3">
+                <h2>บทที่ 1</h2>
+                <h5>lorem</h5>
 
-        <div class="file-holder">
-            <span>some pdf files</span>
-        </div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam incidunt in tempore excepturi
+                    dignissimos. Accusamus dicta dolores corporis deleniti illum, tempore inventore dolor quia
+                    doloremque laudantium voluptas at! Dolorem, voluptates!</p>
+                <p>#Credit : mycodeschool</p>
+            </div>
+        </section>
     </main>
 </body>
 
