@@ -47,6 +47,12 @@
         .select-choice {
             padding: 20px;
             background: rgb(238, 238, 238);
+            text-decoration: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
         }
 
         .hidden {
@@ -68,7 +74,7 @@
             <div class="col-3 p-3">
                 <div class="select-choice">Profile</div>
                 <div class="select-choice">Notification</div>
-                <div class="select-choice">Log out</div>
+                <div class="select-choice"><a href="/login" onclick="setLogout()">Log out</a></div>
             </div>
 
             <div class="col-7 p-3 ">
@@ -106,12 +112,23 @@
                     </div>
                 </section>
 
-                <section class="p-4">
+                <section class="p-4 hidden">
                     <h3>Notification</h3>
                     <div class="form-check form-switch my-3">
                         <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                        <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox
-                            input</label>
+                        <label class="form-check-label" for="flexSwitchCheckDefault">แจ้งเตือนเมื่ออัปเดต</label>
+                    </div>
+
+                    <div class="form-check form-switch my-3">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault2">
+                        <label class="form-check-label"
+                            for="flexSwitchCheckDefault2">แจ้งเตือนเมื่ออาจารย์เผยเนื้อหา</label>
+                    </div>
+
+                    <div class="form-check form-switch my-3">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault3">
+                        <label class="form-check-label"
+                            for="flexSwitchCheckDefault3">แจ้งเตือนเมื่ออาจารย์ตอบกลับข้อความ</label>
                     </div>
 
                 </section>
